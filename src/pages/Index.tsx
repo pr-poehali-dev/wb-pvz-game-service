@@ -358,7 +358,6 @@ const Index = () => {
                   </Card>
                 </div>
               )}
-          )}
 
           {/* Rules Tab */}
           {activeTab === 'rules' && (
