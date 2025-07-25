@@ -106,36 +106,36 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      {/* Left Sidebar */}
-      <div className="w-20 bg-white border-r border-gray-200 flex flex-col">
-        {/* Logo */}
+      {/* Left Sidebar - точная копия */}
+      <div className="w-24 bg-white border-r border-gray-200 flex flex-col">
+        {/* Logo Section */}
         <div className="p-4 border-b border-gray-200">
-          <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">PZ</span>
+          <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 rounded-lg flex items-center justify-center mb-2">
+            <span className="text-white font-bold text-sm">WB</span>
           </div>
         </div>
 
         {/* Navigation Icons */}
-        <div className="flex-1 py-6">
-          <div className="space-y-4">
-            <button className="w-full p-3 flex justify-center hover:bg-gray-100 transition-colors">
+        <div className="flex-1 py-4">
+          <div className="space-y-2 px-2">
+            <button className="w-full p-3 flex justify-center hover:bg-gray-100 transition-colors rounded-lg">
               <Icon name="Menu" size={20} className="text-gray-600" />
             </button>
-            <button className="w-full p-3 flex justify-center hover:bg-gray-100 transition-colors">
+            <button className="w-full p-3 flex justify-center hover:bg-gray-100 transition-colors rounded-lg">
               <Icon name="Package" size={20} className="text-gray-600" />
             </button>
-            <button className="w-full p-3 flex justify-center hover:bg-gray-100 transition-colors">
+            <button className="w-full p-3 flex justify-center hover:bg-gray-100 transition-colors rounded-lg">
               <Icon name="Search" size={20} className="text-gray-600" />
             </button>
           </div>
         </div>
 
-        {/* Bottom Section */}
+        {/* Bottom Profile Section */}
         <div className="p-4 border-t border-gray-200">
-          <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
-            <Icon name="User" size={16} className="text-gray-600" />
+          <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mb-2">
+            <Icon name="User" size={16} className="text-purple-600" />
           </div>
-          <div className="mt-2 text-xs text-gray-500 text-center">
+          <div className="text-xs text-gray-500 text-center leading-tight">
             SCANNING<br />
             v1.0.67
           </div>
@@ -144,14 +144,14 @@ const Index = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        {/* Top Navigation */}
+        {/* Top Header - точная копия */}
         <header className="bg-white border-b border-gray-200 px-8 py-4">
           <div className="flex items-center justify-between">
-            {/* Tab Navigation */}
-            <div className="flex space-x-8">
+            {/* Tab Navigation - точно как на картинке */}
+            <div className="flex space-x-12">
               <button
                 onClick={() => setActiveTab('delivery')}
-                className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+                className={`text-sm font-medium pb-3 border-b-2 transition-colors ${
                   activeTab === 'delivery'
                     ? 'border-purple-500 text-purple-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700'
@@ -161,7 +161,7 @@ const Index = () => {
               </button>
               <button
                 onClick={() => setActiveTab('rules')}
-                className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+                className={`text-sm font-medium pb-3 border-b-2 transition-colors ${
                   activeTab === 'rules'
                     ? 'border-purple-500 text-purple-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700'
@@ -171,7 +171,7 @@ const Index = () => {
               </button>
               <button
                 onClick={() => setActiveTab('return')}
-                className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+                className={`text-sm font-medium pb-3 border-b-2 transition-colors ${
                   activeTab === 'return'
                     ? 'border-purple-500 text-purple-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700'
@@ -181,20 +181,18 @@ const Index = () => {
               </button>
             </div>
 
-            {/* Right Section */}
+            {/* Right Section - точная копия иконок */}
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3">
                 <Icon name="Bell" size={20} className="text-gray-400" />
                 <Icon name="Settings" size={20} className="text-gray-400" />
               </div>
               
-              <div className="relative">
-                <div className="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">13</span>
-                </div>
+              <div className="w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs font-bold">13</span>
               </div>
 
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3">
                 <Icon name="MessageCircle" size={20} className="text-gray-400" />
                 <Icon name="Github" size={20} className="text-gray-400" />
               </div>
@@ -207,115 +205,75 @@ const Index = () => {
           </div>
         </header>
 
-        {/* Main Content Area */}
-        <main className="flex-1 flex items-center justify-center p-8">
-          {activeTab === 'delivery' && (
-            <div className="max-w-4xl w-full">
-              {!foundOrder ? (
-                <div className="text-center">
-                  {/* Voice Control */}
-                  <div className="mb-6 flex justify-center">
-                    <Button
-                      onClick={() => setIsVoiceEnabled(!isVoiceEnabled)}
-                      variant={isVoiceEnabled ? "default" : "outline"}
-                      className="flex items-center gap-2"
-                    >
-                      <Icon name={isVoiceEnabled ? "Volume2" : "VolumeX"} size={16} />
-                      {isVoiceEnabled ? "Оксана включена" : "Оксана отключена"}
-                    </Button>
-                  </div>
+        {/* Main Content - центрированное содержимое как на картинке */}
+        <main className="flex-1 flex items-center justify-center bg-gray-50">
+          {activeTab === 'delivery' && !foundOrder && (
+            <div className="max-w-lg w-full text-center px-8">
+              {/* Voice Control - скрытый но функциональный */}
+              <div className="hidden">
+                <Button
+                  onClick={() => setIsVoiceEnabled(!isVoiceEnabled)}
+                  variant="ghost"
+                  size="sm"
+                >
+                  <Icon name={isVoiceEnabled ? "Volume2" : "VolumeX"} size={16} />
+                </Button>
+              </div>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* QR Scanner */}
-                    <Card className="bg-white shadow-lg border border-gray-200">
-                      <CardHeader className="bg-gradient-to-r from-purple-500 to-blue-500 text-white">
-                        <CardTitle className="flex items-center justify-center gap-2">
-                          <Icon name="QrCode" size={24} />
-                          QR-Сканер
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-8 text-center">
-                        <div className="mb-6">
-                          <img 
-                            src="https://cdn.poehali.dev/files/b6a7e05f-173d-4642-af99-b27bc7f53fcd.jpg"
-                            alt="QR Scanner Device" 
-                            className={`w-48 h-48 mx-auto object-contain transition-all ${
-                              isScanning ? 'animate-pulse border-4 border-purple-500 rounded-lg' : ''
-                            }`}
-                          />
-                        </div>
-                        <h3 className="text-lg text-gray-700 mb-4">
-                          Отсканируйте QR-код клиента или курьера
-                        </h3>
-                        <Button 
-                          onClick={simulateQRScan}
-                          className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3"
-                          disabled={isScanning}
-                        >
-                          {isScanning ? (
-                            <>
-                              <Icon name="Loader2" size={16} className="mr-2 animate-spin" />
-                              Сканирование...
-                            </>
-                          ) : (
-                            <>
-                              <Icon name="Camera" size={16} className="mr-2" />
-                              Активировать сканер
-                            </>
-                          )}
-                        </Button>
-                      </CardContent>
-                    </Card>
-
-                    {/* Phone Input */}
-                    <Card className="bg-white shadow-lg border border-gray-200">
-                      <CardHeader className="bg-gradient-to-r from-green-500 to-emerald-500 text-white">
-                        <CardTitle className="flex items-center justify-center gap-2">
-                          <Icon name="Phone" size={24} />
-                          Поиск по номеру
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-8">
-                        <div className="text-center mb-6">
-                          <h3 className="text-lg text-gray-700 mb-2">или</h3>
-                          <p className="text-gray-600">Введите номер телефона клиента</p>
-                        </div>
-                        
-                        <div className="space-y-4">
-                          <Input
-                            type="tel"
-                            placeholder="Последние 4 цифры номера"
-                            value={phoneNumber}
-                            onChange={(e) => setPhoneNumber(e.target.value)}
-                            className="w-full text-center text-xl font-mono py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                            maxLength={4}
-                          />
-                          
-                          <Button 
-                            onClick={searchOrder}
-                            className="w-full bg-green-600 hover:bg-green-700 text-white py-4 text-lg"
-                            disabled={phoneNumber.length !== 4 || isScanning}
-                          >
-                            {isScanning ? (
-                              <>
-                                <Icon name="Loader2" size={20} className="mr-2 animate-spin" />
-                                Поиск...
-                              </>
-                            ) : (
-                              <>
-                                <Icon name="Search" size={20} className="mr-2" />
-                                Найти заказ
-                              </>
-                            )}
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
+              {/* QR Scanner Section - точно как на картинке */}
+              <div className="mb-12">
+                <h1 className="text-xl text-gray-600 mb-12 font-normal">
+                  Отсканируйте QR-код клиента или курьера
+                </h1>
+                
+                <div className="mb-12">
+                  <img 
+                    src="https://cdn.poehali.dev/files/f76e5ef0-6b0c-43a1-be76-91b87dbdb68d.jpg"
+                    alt="QR Scanner Device" 
+                    className={`w-56 h-56 mx-auto object-contain cursor-pointer transition-all ${
+                      isScanning ? 'animate-pulse filter brightness-110' : ''
+                    }`}
+                    onClick={simulateQRScan}
+                  />
                 </div>
-              ) : (
-                /* Order Found */
-                <div className="max-w-2xl mx-auto">
+              </div>
+
+              {/* Divider */}
+              <div className="mb-8">
+                <span className="text-gray-400 text-sm">или</span>
+              </div>
+
+              {/* Phone Input Section - точно как на картинке */}
+              <div>
+                <h2 className="text-lg text-gray-600 mb-8 font-normal">
+                  Введите номер телефона клиента
+                </h2>
+                
+                <div className="space-y-6">
+                  <Input
+                    type="tel"
+                    placeholder="Последние 4 цифры номера"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    className="w-full text-center text-lg py-4 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-purple-500 focus:border-transparent font-normal"
+                    maxLength={4}
+                  />
+                  
+                  <Button 
+                    onClick={searchOrder}
+                    className="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-lg text-base font-medium"
+                    disabled={phoneNumber.length !== 4 || isScanning}
+                  >
+                    {isScanning ? 'Поиск...' : 'Найти заказ'}
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Order Found Screen */}
+          {activeTab === 'delivery' && foundOrder && (
+            <div className="max-w-2xl mx-auto px-8">
                   <Card className="bg-white shadow-xl border-2 border-green-300">
                     <CardHeader className="bg-gradient-to-r from-green-500 to-emerald-600 text-white">
                       <CardTitle className="flex items-center justify-center gap-2 text-xl">
@@ -403,8 +361,9 @@ const Index = () => {
             </div>
           )}
 
+          {/* Rules Tab */}
           {activeTab === 'rules' && (
-            <div className="max-w-2xl w-full">
+            <div className="max-w-2xl w-full px-8">
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
                 <h1 className="text-2xl font-semibold text-gray-800 mb-6">Правила работы</h1>
                 
@@ -432,7 +391,7 @@ const Index = () => {
                     <ul className="space-y-2 text-gray-600">
                       <li>• Озвучивает все этапы работы с заказами</li>
                       <li>• Напоминает об оценке пункта выдачи</li>
-                      <li>• Можно отключить/включить в любой момент</li>
+                      <li>• Работает автоматически при операциях</li>
                     </ul>
                   </div>
                 </div>
@@ -440,8 +399,9 @@ const Index = () => {
             </div>
           )}
 
+          {/* Return Tab */}
           {activeTab === 'return' && (
-            <div className="max-w-2xl w-full">
+            <div className="max-w-2xl w-full px-8">
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
                 <h1 className="text-2xl font-semibold text-gray-800 mb-6">Обработка возвратов</h1>
                 
